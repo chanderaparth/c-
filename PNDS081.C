@@ -1,0 +1,33 @@
+/* Returning two dimensional int array form function */
+
+#include <stdio.h>
+#include <conio.h>
+#define s 5
+
+int main() {
+  int a[s], x;
+  clrscr();
+
+  printf("Enter your number for array a\n");
+  for(x=0; x<s; x++) {
+	printf("a[%d] = ", x);
+	scanf("%d", &a[x]);
+  }
+
+  fun(a);
+
+  printf("This value print from main()\n");
+  for(x=0; x<s; x++) {
+      printf("a[%d] = %d\n", x,a[x]);
+  }
+
+  getch();
+  return 0;
+}
+
+fun(int t[s])
+{
+  t[2] = 20;
+  t[4] = 40;
+return 0;
+}

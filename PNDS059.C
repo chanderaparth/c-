@@ -1,0 +1,64 @@
+/* Calculating bill for five items */
+
+#include <stdio.h>
+#include <conio.h>
+
+#define s 5
+
+
+
+int main() {
+  char Item[s][10];
+  int i, Qty[s];
+  float Rate[s], Amt[s], Total=0.00, Dis, Net;
+
+  clrscr();
+
+  for(i=0; i<s; i++) {
+
+    printf("Item: ");
+    gets(Item[i]);
+
+    printf("Qty: ");
+    scanf("%d", &Qty[i]);
+
+    printf("Rate: ");
+    scanf("%f", &Rate[i]);
+
+    flushall();
+
+    printf("------------\n");
+
+    Amt[i] = Rate[i] * Qty[i];
+
+    Total += Amt[i];
+  }
+
+  if(Total >= 1000) {
+    Dis = Total * 0.10;
+  }
+  else if(Total >= 500) {
+    Dis = Total * 0.05;
+  }
+  else {
+    Dis = 0.00;
+  }
+
+  Net = Total - Dis;
+
+
+  clrscr();
+
+  printf("Item\t\tQty\t  Rate\t   Amount\n");
+
+  for(i=0; i<s; i++) {
+    printf("%-12s\t%d\t%8.2f %8.2f\n", Item[i], Qty[i], Rate[i], Amt[i]);
+  }
+  printf("\n\t\t\t\t-------------\n");
+  printf("\t\t\t  Total: %8.2f\n", Total);
+  printf("\t\t\t  Dis  : %8.2f\n", Dis);
+  printf("\t\t\t  Net  : %8.2f\n", Net);
+
+  getch();
+  return 0;
+}

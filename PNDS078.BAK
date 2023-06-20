@@ -1,0 +1,26 @@
+/* Call by reference */
+
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+  void change(int *);
+
+  int a=10;
+
+  clrscr();
+
+  change(&a);
+
+  printf("A = %d\n", a);
+
+  getch();
+  return 0;
+}
+
+void change(int *x) {
+
+  *x = 5;
+  printf("X = %d\n", *x);
+
+}

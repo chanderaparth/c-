@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<conio.h>
+
+int fib(int se)
+{
+    if (se == 0)
+    {
+    return 0;
+    }
+    else if (se == 1)
+    {
+    return 1;
+    }
+    else
+    {
+    return fib(se - 1) + fib(se - 2);
+    }
+}
+int main()
+{
+    int se;
+    int i;
+    clrscr();
+    printf("Enter the number : ");
+    scanf("%d", &se);
+    for (i = 0; i < se; i++)
+    {
+    printf("%d, ", fib(i));
+    }
+
+    getch();
+    return 0;
+}

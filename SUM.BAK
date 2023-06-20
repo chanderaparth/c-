@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<conio.h>
+int main() {
+   int rows, i, j, p;
+   clrscr();
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = rows; i >= 1; --i) {
+      for (p = 0; p < rows - i; ++p)
+	 printf(" ");
+      for (j = i; j <= 2 * i - 1; ++j)
+	 printf("*");
+      for (j = 0; j < i - 1; ++j)
+	 printf("*");
+      printf("\n");
+   }
+   getch();
+   return 0;
+}

@@ -1,0 +1,23 @@
+/* Implicit and Explicit Casting */
+
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+
+  int a=5, b=2, sum;
+  float avg;
+
+  sum = a + b;
+  avg = (float) sum / 2;
+
+  clrscr();
+  printf("A = %d\n", a);
+  printf("B = %d\n", b);
+  printf("Sum = %d\n", sum);
+  printf("Avg = %.2f\n", avg);
+
+  getch();
+  return 0;
+}
+
